@@ -11,33 +11,24 @@
   </head>
 
   <body>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="check" viewBox="0 0 16 16">
-    <title>Check</title>
-    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-  </symbol>
-</svg>
-
 <div class="container py-3">
   <header>
     <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+      <span href="/" class="d-flex align-items-center text-dark text-decoration-none">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-c-circle-fill" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c.961 0 1.641.633 1.729 1.512h1.295v-.088c-.094-1.518-1.348-2.572-3.03-2.572-2.068 
   0-3.269 1.377-3.269 3.638v1.073c0 2.267 1.178 3.603 3.27 3.603 1.675 0 2.93-1.02 3.029-2.467v-.093H9.875c-.088.832-.75 1.418-1.729 1.418-1.224 
   0-1.927-.891-1.927-2.461v-1.06c0-1.583.715-2.503 1.927-2.503Z"/>
-</svg>
-        <span class="fs-4">Ремонт у Сани</span>
-      </a>
-
+</svg></span>
+        <span class="fs-4"><%= link_to 'Ремонт у Сани', root_path%></span>
+        
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">О нас</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Услуги</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Цены</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Контакты</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Отзывы</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">+7 (927) 463-34-22</a>
+        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'О нас', abouts_path%></span>
+        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Услуги', services_path%></span>
+        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Цены', prices_path%></span>
+        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Контакты', contacts_path%></span>
+        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Отзывы',  comments_path%></span>
+        <span class="me-3 py-2 text-dark text-decoration-none" href="#">+7 (927) 463-34-22</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
 </svg>
