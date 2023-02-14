@@ -1,9 +1,26 @@
-<h1>Ремонт стиральных машин на дому</h1>
+<div class="container">
+  <main>
+    <div class="py-3 ">
+      <h2>Ремонт стиральных машин на дому</h2>
+      <p class="lead">Узнайте возможную причину неисправности и<br> 
+                      стоимость ремонта по телефону <strong>+7 (927) 463-34-22</strong><br>
+                      или оставьте свой номер и мастер Вам перезвонит</p>
 
-<form class="ecoform-inline">
-              <div class="ecoform-input">
-		<input type="text" name="Телефон" id="phone" required="" placeholder="Ваш телефон">
-        <input type="text" name="Имя" required="" placeholder="Ваше имя">
+<%= form_with model: @page do |f| %>
+  <div>
+  <div class="col-sm-3">
+      <%= f.text_field :phone, required: true, minlength: 11, placeholder: 'Ваш телефон', class: 'form-control' %>
+  </div>
 </div>
-<div class="ecoform-button"><button class="form-submit">Заказать бесплатную консультацию</button></div>
-</form> 
+
+  <div class="col-sm-3"><br>
+      <%= f.text_field :name, required: true, minlength: 2, placeholder: 'Ваше имя', class: 'form-control' %>
+  </div>
+</div>
+
+      <%= f.submit 'Заказать бесплатную консультацию', class: 'btn btn-primary btn-lg' %>
+</div>
+</div>
+<% end %>
+
+
