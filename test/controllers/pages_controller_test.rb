@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
-class PagesControllerTest < ActionDispatch::IntegrationTest
+class ClientsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
