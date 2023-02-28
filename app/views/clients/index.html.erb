@@ -6,7 +6,7 @@
                       стоимость ремонта по телефону <strong>+7 (927) 463-34-22</strong><br>
                       или оставьте свой номер и мастер Вам перезвонит</p>
 
-<%= form_with model: @page do |f| %>
+<%= form_with model: @client do |f| %>
   <div>
   <div class="col-sm-3">
       <%= f.text_field :phone, required: true, minlength: 11, placeholder: 'Ваш телефон', class: 'form-control' %>
