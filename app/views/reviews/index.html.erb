@@ -1,0 +1,18 @@
+<h1 class="mb-4"> Ваши отзывы </h1>
+
+<%= link_to 'Оставить отзыв', new_review_path, class: 'btn btn-primary btn-lg' %>
+
+<%= @reviews.each do |review| %>
+  <article class="card mt-3">
+    <div class="card-body">
+      <h4><%= review.body %></h4>
+  
+      <section class="card-text">
+        <time datetime="<%= review.formatted_created_at %>">
+          <small><%= review.formatted_created_at %></small></time><br>
+      <%= link_to 'Показать полностью', review_path(review), class: 'btn btn-primary mt-2'%>
+      <%= link_to 'Редактировать', edit_review_path(review), class: 'btn btn-secondary mt-2' %>
+      <%= link_to 'Удалить', review_path(review), class: 'btn btn-danger mt-2', data: {method: :delete, confirm: 'Вы точно уверены?'} %>
+    </div>
+  </article>
+<% end %>

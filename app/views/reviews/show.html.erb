@@ -1,0 +1,25 @@
+<h1 class="mb-4"><%= @review.body %> </h1>
+
+<time datetime="<%= @review.formatted_created_at %>">
+  <%= @review.formatted_created_at %></time>
+
+  
+  <%= link_to 'Показать полностью', review_path(@review), class: 'btn btn-primary mt-2'%>
+  <%= link_to 'Редактировать', edit_review_path(@review), class: 'btn btn-secondary mt-2' %>
+  <%= link_to 'Удалить', review_path(@review), class: 'btn btn-danger mt-2', data: {method: :delete, confirm: 'Вы точно уверены?'} %>
+ 
+ <hr class="my-3">
+
+ <%= form_with model: [@review, @comment] do |f| %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+    <%= f.label :Комментарий %>
+    </div>
+    
+    <div class="col-sm-10">
+    <%= f.text_area :body, class: "form-control", required: true, minlenght: 5 %>
+    </div>
+  </div>
+
+  <%= f.submit "Отправить", class: "btn btn-primary"%>
+<% end %>
