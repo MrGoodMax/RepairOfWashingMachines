@@ -28,7 +28,7 @@
         <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Услуги', services_path%></span>
         <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Цены', prices_path%></span>
         <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Контакты', contacts_path%></span>
-        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Отзывы',  comments_path%></span>
+        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Отзывы',  reviews_path%></span>
       <% if user_signed_in? %>
        <li class="dropdown", href="#">
       <button onclick="myFunction()" class="dropbtn btn btn-primary btn-lg"><%= current_user.name%></button>

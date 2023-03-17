@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   resources :abouts
   resources :prices
   resources :services
-  resources :comments
+  resources :reviews do
+    resources :comments, only: %i[create]
+  end
+
 end
