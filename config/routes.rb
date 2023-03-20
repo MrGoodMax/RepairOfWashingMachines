@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :prices
   resources :services
   resources :reviews do
-    resources :comments, only: %i[create]
+    resources :comments, except: %i[new show]
   end
 
 end
