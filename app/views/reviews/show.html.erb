@@ -1,25 +1,33 @@
-<h1 class="mb-4"><%= @review.body %> </h1>
+<% provide :clients_title, 'Отзыв' %>
+
+<h1 class="mb-2"><%= @review.body %> </h1>
 
 <time datetime="<%= @review.formatted_created_at %>">
   <%= @review.formatted_created_at %></time>
 
-  
+  <div class="mb-4">
   <%= link_to 'Показать полностью', review_path(@review), class: 'btn btn-primary mt-2'%>
   <%= link_to 'Редактировать', edit_review_path(@review), class: 'btn btn-secondary mt-2' %>
   <%= link_to 'Удалить', review_path(@review), class: 'btn btn-danger mt-2', data: {method: :delete, confirm: 'Вы точно уверены?'} %>
- 
- <hr class="my-3">
+ </div>
+<hr class="my-3">
 
- <%= form_with model: [@review, @comment] do |f| %>
-  <div class="mb-3 row">
-    <div class="col-sm-2 col-form-label">
-    <%= f.label :Комментарий %>
-    </div>
-    
-    <div class="col-sm-10">
-    <%= f.text_area :body, class: "form-control", required: true, minlenght: 5 %>
-    </div>
-  </div>
+<%= render 'comments/form' %>
 
-  <%= f.submit "Отправить", class: "btn btn-primary"%>
+
+<h2><hr class="my-3">Комментарии</h2>
+
+<% @comments.each do |comment|%>
+  <article class="mb-3">
+    <time datetime="<%= comment.formatted_created_at %>">
+    <%= comment.formatted_created_at %></time>
+
+    <p>
+      <%= comment.body %>
+    </p>
+
+    <%= link_to 'Редактировать', edit_review_comment_path(@review, comment), class: 'btn btn-secondary btn-sm' %>
+    <%= link_to 'Удалить', review_comment_path(@review, comment), class: 'btn btn-danger btn-sm',
+    data: {method: :delete, confirm: "Вы уверены?"} %>
+  </article>
 <% end %>

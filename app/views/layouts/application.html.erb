@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Ремонт стиральных машин</title>
+    <title><%= full_title(yield(:clients_title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -51,6 +51,7 @@
     <% flash.each do |k,v| %>
       <%=tag.div v, class: "alert alert-#{k}", role: 'alert'%>
     <% end %>
+
     <%= yield %>
   </body>
 </html>

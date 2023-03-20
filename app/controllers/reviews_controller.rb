@@ -20,11 +20,12 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-
+    
   end
 
   def show
     @comment = @review.comments.build
+    @comments = @review.comments.order created_at: :desc 
   end
 
   def update
