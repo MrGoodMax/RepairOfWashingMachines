@@ -12,34 +12,27 @@
   </head>
 
   <body>
-    <div class="container py-3">
   <header>
-    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-      <span href="/" class="d-flex align-items-center text-dark text-decoration-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-c-circle-fill" viewBox="0 0 16 16">
-          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c.961 0 1.641.633 1.729 1.512h1.295v-.088c-.094-1.518-1.348-2.572-3.03-2.572-2.068 
-  0-3.269 1.377-3.269 3.638v1.073c0 2.267 1.178 3.603 3.27 3.603 1.675 0 2.93-1.02 3.029-2.467v-.093H9.875c-.088.832-.75 1.418-1.729 1.418-1.224 
-  0-1.927-.891-1.927-2.461v-1.06c0-1.583.715-2.503 1.927-2.503Z"/>
-</svg></span>
-        <span class="fs-3"><%= link_to 'Ремонт у Сани', root_path%></span>
-        
-      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'О нас', abouts_path%></span>
-        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Услуги', services_path%></span>
-        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Цены', prices_path%></span>
-        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Контакты', contacts_path%></span>
-        <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Отзывы',  reviews_path%></span>
+
+    <div class="logo"><span><%= link_to 'Ремонт у Сани', root_path%></span>
+    </div>
+        <nav class="navigation">
+        <span><%= link_to 'О нас', abouts_path%></span>
+        <span><%= link_to 'Услуги', services_path%></span>
+        <span><%= link_to 'Цены', prices_path%></span>
+        <span><%= link_to 'Контакты', contacts_path%></span>
+        <span><%= link_to 'Отзывы',  reviews_path%></span>
       <% if user_signed_in? %>
        <li class="dropdown", href="#">
-      <button onclick="myFunction()" class="dropbtn btn btn-primary btn-lg"><%= current_user.name%></button>
+      <button onclick="myFunction()" class="dropbtn btnLogin-popup btn-lg"><%= current_user.name%></button>
   <div id="myDropdown" class="dropdown-content">
-       <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Редактировать профиль', edit_user_path(current_user) %></span>
-      <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Выйти', session_path, data: {method: :delete} %></span>
+       <span><%= link_to 'Редактировать профиль', edit_user_path(current_user) %></span>
+      <span><%= link_to 'Выйти', session_path, data: {method: :delete} %></span>
       <% else %>
-       <button onclick="myFunction()" class="dropbtn btn btn-primary btn-lg">Регистрация</button>
+       <button onclick="myFunction()" class="dropbtn btnLogin-popup btn-lg">Регистрация</button>
   <div id="myDropdown" class="dropdown-content">
-  <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Зарегистрироваться', new_user_path%></span>
-      <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Войти', new_session_path%></span>
+  <span><%= link_to 'Зарегистрироваться', new_user_path%></span>
+      <span><%= link_to 'Войти', new_session_path%></span>
       
   </div>
       <% end %>
@@ -51,6 +44,7 @@
     <% flash.each do |k,v| %>
       <%=tag.div v, class: "alert alert-#{k}", role: 'alert'%>
     <% end %>
+
 
     <%= yield %>
   </body>
