@@ -58,6 +58,13 @@
 
 .show {display: block;}
 
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+
 header {
   position: fixed;
   top: 0;
@@ -68,7 +75,27 @@ header {
   justify-content: space-around;
   align-items: center;
   z-index: 99;
+  background: transparent;
+  transition: 1s ease;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
+  
 }
+
+.fixed {
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+header.fixed #logo {
+  color: #343434;
+}
+
+.fixed #navigation a {color: #343434}
+.fixed #navigation a:hover {color: #7c7c7c}
+
 
 body {
   display: flex;
@@ -78,6 +105,7 @@ body {
   background: url('https://pegas56.ru/wp-content/uploads/2023/03/otkrytaya-stiralnaya-mashiny-stoyashchaya-na-polu.png');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .logo a{
@@ -161,14 +189,13 @@ body {
 }
 
 .entry-content h1 {
-  color: #4769b3;
-  ;
+  color: #0d6efd;
 }
 
 .entry-content h2 {
   font-size: 28px;
   font-family: Roboto, Arial, sans-serif;
-  color: #4769b3;
+  color: #fea700;
   line-height: 50px;
   text-align: left;
 }
@@ -194,4 +221,745 @@ body {
   align-items: center;
   overflow: hidden;
   transition: transform .5s ease, height .2s ease;
+  margin-left: -20px;
+  height: 500px;
+  
 }
+
+.front-page-titles {
+  display: flex;
+  align-items: center;
+  color: #0d6efd;
+  text-shadow: 2px 2px #000;
+}
+
+.brands-in-flex {
+  margin: 90px 20px 0px 25px;
+}
+
+.brands-in-flex tr {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  position: relative;
+  text-shadow: 2px 2px #000;
+  margin: 10px 210px 10px 5px;
+  height: 2,5em;
+  width: 280px;
+}
+
+ion-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fea700;
+  padding: 9px;
+  height: 50px;
+}
+
+
+
+tr td span {
+  color: #ffffff;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #000;
+}
+
+.feedback {
+  color: #fea700;
+  text-shadow: 2px 2px #000;
+}
+
+#butt {
+  display: flex;
+  width: 540px;
+  flex-direction: column-reverse;
+  margin-top: 10px;
+}
+
+
+// Services
+
+.serv {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform .5s ease, height .2s ease;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.content {
+  margin: 10px 20px 10px 20px;
+  color: #ffffff;
+  position: relative;
+  padding: 0;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #000;
+  width: 90%;
+}
+
+.content h1 {
+  color: #0d6efd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.content table {
+  margin-bottom: -11px;
+}
+
+.content b {
+  color: #f5c876;
+}
+
+.content span {
+  font-weight: bold;
+  color: #fea700;
+}
+
+.content tr td {
+  border-bottom: 1px solid grey;
+  height: 60px;
+}
+
+.content em {
+  color: #8e8f8a;
+  text-shadow: 1px 1px #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+// clients
+header #logo {
+  color: #fff;
+  cursor: pointer;
+}
+
+header #logo span {
+  font-size: 1.7em;
+  line-height: 45px;
+  margin-left: 40px;
+  font-family: 'Suez One', serif;
+}
+
+@media (min-width: 701px) {
+  #logo {
+    float: left;
+    width: 30%;
+    font-size: 1.1em;
+  }
+
+  #about {
+    float: right;
+    width: 67%;
+  }
+}
+
+@media (max-width: 700px) {
+  #logo {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  #about {
+    float: left;
+    width: 100%;
+  }
+}
+
+#about {
+  text-align: center;
+  font-size: 1em;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+
+#about > a {color: #fff}
+
+#about > a:hover {
+  color: #b0b0b0;
+  text-decoration: underline;
+}
+
+#about > a:not(:last-child) {
+  margin-right: 7%;
+}
+
+
+/* Главный блок на сайте */
+
+
+
+#top {
+    width: 100%;
+    float: left;
+    padding-top: 10em;
+    padding-bottom: 7em;
+    background-image: url(https://pegas56.ru/wp-content/uploads/2023/03/otkrytaya-stiralnaya-mashiny-stoyashchaya-na-polu.png);
+    background-blend-mode: multiply;
+    background-color: #2e3a44;
+    background-size: cover;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+#top h1 {
+  text-transform: uppercase;
+  color: #c2c1c1;
+  font-family: Arimo, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 4rem;
+}
+
+@media (min-width: 801px) {
+  #top div {
+    width: 25%;
+    margin-left: 6%;
+    float: left;
+    position: relative;
+    top: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  #top div {
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+    position: relative;
+    top: 40px;
+  }
+}
+
+#top img {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+#top .heading {
+  color: #f6f6f6;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+
+
+
+/* Блок с возможностями */
+
+#main {
+  padding: 100px 20%;
+  width: 60%;
+  float: left;
+  background-color: #ffffff;
+  color: #484848;
+  font-size: 1.3em;
+}
+
+@media (min-width: 1401px) {
+  #main {
+    padding: 40px 30px 40px 30px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1400px) {
+  #main {
+    padding: 100px 10%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  #main div {
+    width: 98%!important;
+    margin-bottom: 20px;
+  }
+}
+
+#main div {
+  width: 48%;
+  float: left;
+}
+
+#main .intro {
+  width: 510px;
+  height: 520px;
+  position: relative;
+  right: 30px;
+}
+
+#main .intro img {
+  width: 480px;
+  height: 510px;
+  
+}
+
+#main .text {
+  width: 54%;
+  margin: 40px 0px;
+}
+
+#main .text p {
+  color: #636363;
+  text-indent: 40px;
+  text-align: justify;
+  padding: 4px;
+}
+
+
+#main .text b {
+  color: #e79801;
+  text-shadow: 1px 0px #000;
+}
+
+/* Блок с преимуществами */
+
+#overview {
+  float: left;
+  background-image: url(https://gaggen.store/upload/iblock/b59/b591c407a69f2c68b558cfeddc9faeba.jpg);
+  background-blend-mode: multiply;
+  background-color: #403f40;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 70px 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+#overview h2 {
+  text-transform: uppercase;
+  color: #dad7d7;
+  font-family: Arimo, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#overview h4 {
+  color: #ccc; font-size: 1.5em;
+  margin-top: 30px;
+}
+
+@media (min-width: 561px) {
+  #overview h2 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 560px) {
+  #overview h2 {
+    font-size: 2em;
+  }
+}
+
+#overview .img {
+  float: left;
+  width: 20%;
+  margin-top: 50px;
+}
+
+
+#overview img {
+  padding: 5px;
+  float: left;
+  max-width: 500px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+
+#overview .img .standart {
+  width: 420px;
+  margin-left: 10px;
+  position: relative;
+  height: 480px;
+}
+
+#overview .img .horizontally {
+  width: 420px;
+  position: relative;
+  left: 11em;
+  height: 480px;
+  margin-left: 8px;
+}
+
+#overview .img .technology {
+  width: 420px;
+  position: relative;
+  left: 22em;
+  height: 480px;
+}
+
+#overview .img span {
+  float: left;
+  width: 100%;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+#overview .img .stdn {
+  width: 443px;
+}
+
+#overview .img .horz {
+  width: 800px;
+}
+
+#overview .img .tech {
+  width: 364px;
+  position: relative;
+  left: 377px;
+}
+
+
+
+// Блок с ремонтом марок
+
+#brands {
+  background-color: #f3f2f2;
+  width: 100%;
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 840px;
+}
+
+#brands .front-page-title {
+  text-align: center;
+  font-weight: 500;
+  margin: 30px 0 5px 0;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  font-size: 30px;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#brands p {
+  text-align: center;
+  font-weight: 500;
+  margin: 10px 0 25px 0;
+  color: #706e6e;
+  font-size: 24px;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#brands ul li {
+  color: #f3f2f2;
+}
+
+.brands-list-link img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.brands-list-item {
+  position: relative;
+  height: 100px;
+  text-align: center;
+  border: 1px solid #cdc8c8;
+  margin: 10px auto;
+  border-radius: 10px;
+  width: 280px;
+}
+
+.col-in-flex {
+  width: 100%;
+  display: flex;
+  position: relative;
+  padding: 0;
+}
+
+.brands-list-item:hover {
+  background: #d3d3d3;
+  color: #162938;
+  transition: 1s;
+}
+
+
+// Блок с шагами работы
+
+
+.steps-items-bord {
+  float: left;
+  background-image: url(https://images.samsung.com/is/image/samsung/assets/ru/offer/1440x640_KV_WM1.jpg?imwidth=1366);
+  background-blend-mode: multiply;
+  background-color: #403f40;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 30px 30px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  border-bottom: 1px solid silver;
+}
+
+.steps-items-bord h2 {
+  color: #d3d3d3;
+  font-size: 3em;
+}
+
+.steps-items-bord p {
+  color: #b8b8b8;
+  font-size: 1em;
+}
+
+.steps-icon {
+  float: left;
+  margin-right: 20px;
+  font-size: 48px;
+  color: #f7f8f8;
+}
+
+.steps-item img {
+  float: left;
+  width: 10%;
+  font-size: 20px;
+  margin-top: 15px;
+  filter: brightness(115%);
+  position: relative;
+  left: -34px;
+}
+
+
+.steps-text {
+  font-size: 24px;
+  padding-top: 20px;
+  position: relative;
+  right: 37px;
+  color: #fea700;
+}
+
+.steps-item p {
+  color: #b7b7b7;;
+  clear: both;
+  padding: 10px 0 20px 0;
+  line-height: 1.5;
+  text-align: inherit;
+}
+
+
+.steps-item {
+    width: 33.33333333%;
+    float: left;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 0 10px;
+}
+
+
+
+
+
+
+// Преимущества
+
+
+.steps-items-bords h2 {
+  color: #d3d3d3;
+  font-size: 3em;
+}
+
+.steps-items-bords p {
+  color: #b8b8b8;
+  font-size: 1em;
+}
+
+.steps-items-bords {
+  float: left;
+  background-image: url(https://hub-storage.hb.bizmrg.com/images/02.02.2022/S09zl1lHbg9OVyqSH6nqV6K05S8JaDhg99JzQGrb.png);
+  background-blend-mode: multiply;
+  background-color: #403f40;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 30px 30px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  border-bottom: 2px solid silver;
+}
+
+.steps-items-bords .steps-text {
+  font-size: 24px;
+  padding-top: 20px;
+  position: relative;
+  right: 37px;
+  color: #eff306;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Блок с контактами */
+#contacts {
+  width: 100%;
+  float: left;
+  padding-bottom: 40px;
+  padding-top: 70px;
+  background: #f4f4f4;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: lighter;
+}
+
+#contacts h5 {font-size: 3em; color: #4f4f4f}
+
+#form_input {
+  margin-top: 15px;
+  font-size: 1.1em;
+}
+
+@media (min-width: 1051px) {
+  #form_input {
+    width: 35%;
+    margin-left: 38%;
+  }
+}
+
+@media (max-width: 1050px) {
+  #form_input {
+    width: 110%;
+    margin-left: 10%;
+  }
+}
+
+#form_input label {
+  color: #505050;
+  cursor: pointer;
+  font-size: 1.4em;
+  font-family: 'Roboto Slab', serif;
+}
+
+#form_input label > span {
+  color: #e87e7e;
+}
+
+#form_input input,#form_input textarea {
+  margin-bottom: 10px;
+  width: 70%;
+  padding: 10px 2%;
+  border-radius: 7px;
+  border: 2px solid silver;
+  font-size: 0.9em;
+  color: #4a4a4a;
+}
+
+#form_input input:focus, #form_input textarea:focus {
+  border-color: #333;
+}
+
+.btn {
+  float: left;
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-size: 1.2em;
+  background-color: #ec6550;
+  text-shadow: #454545 0 0 2px;
+  cursor: pointer;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+.btn:hover {
+  background-color: #c15443;
+}
+
+/* Вопросы и ответы */
+
+#faq {
+  width: 100%;
+  float: left;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+#faq img {
+  width: 40px;
+}
+
+#faq ion-icon {
+  position: relative;
+  left: 50px;
+}
+
+#faq i {
+  color: rgb(156, 156, 156);
+}
+
+#faq a {
+  color: rgb(180, 33, 33);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
