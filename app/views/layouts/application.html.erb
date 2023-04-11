@@ -12,14 +12,13 @@
   </head>
 
   <body>
-  <header>
+  <header class="black-shadow">
 
     <div class="logo"><span><%= link_to 'Ремонт у Сани', root_path%></span>
     </div>
         <nav class="navigation">
         <span><%= link_to 'О нас', abouts_path%></span>
         <span><%= link_to 'Услуги', services_path%></span>
-        <span><%= link_to 'Цены', prices_path%></span>
         <span><%= link_to 'Контакты', contacts_path%></span>
         <span><%= link_to 'Отзывы',  reviews_path%></span>
       <% if user_signed_in? %>
@@ -48,5 +47,6 @@
 
     <%= yield %>
   </body>
+
 </html>
 

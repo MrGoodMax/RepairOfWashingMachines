@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   resources :contacts
   resources :abouts
-  resources :prices
   resources :services
   resources :reviews do
     resources :comments, except: %i[new show]
