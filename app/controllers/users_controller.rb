@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update user_params
-      flash[:success] = 'Ваш профиль успешно обновлен!'
+      flash[:warning] = 'Ваш профиль успешно обновлен!'
       redirect_to edit_user_path(@user)
     else
       render :edit
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       sign_in @user
-      flash[:success] = "Вы успешно зарегистрироались!, #{@user.name}"
+      flash[:warning] = "Вы успешно зарегистрироались!, #{@user.name}"
       redirect_to root_path
     else
       render :new

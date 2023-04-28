@@ -10,43 +10,38 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-  <header class="black-shadow">
-
-    <div class="logo"><span><%= link_to 'Ремонт у Сани', root_path%></span>
-    </div>
-        <nav class="navigation">
-        <span><%= link_to 'О нас', abouts_path%></span>
-        <span><%= link_to 'Услуги', services_path%></span>
-        <span><%= link_to 'Контакты', contacts_path%></span>
-        <span><%= link_to 'Отзывы',  reviews_path%></span>
-      <% if user_signed_in? %>
-       <li class="dropdown", href="#">
-      <button onclick="myFunction()" class="dropbtn btnLogin-popup btn-lg"><%= current_user.name%></button>
-  <div id="myDropdown" class="dropdown-content">
-       <span><%= link_to 'Редактировать профиль', edit_user_path(current_user) %></span>
-      <span><%= link_to 'Выйти', session_path, data: {method: :delete} %></span>
-      <% else %>
-       <button onclick="myFunction()" class="dropbtn btnLogin-popup btn-lg">Регистрация</button>
-  <div id="myDropdown" class="dropdown-content">
-  <span><%= link_to 'Зарегистрироваться', new_user_path%></span>
-      <span><%= link_to 'Войти', new_session_path%></span>
-      
-  </div>
-      <% end %>
-      </nav>
-    </div>
-    
-  </header>
-  <main class="container mt-3">
-    <% flash.each do |k,v| %>
-      <%=tag.div v, class: "alert alert-#{k}", role: 'alert'%>
-    <% end %>
-
-
-    <%= yield %>
+    <header class="black-shadow">
+      <div class="logo"><span><%= link_to image_tag("Wash.png"), root_path%></span>
+      </div>
+        <div class="flash" style="position: absolute; display: flex; top: 100px; width: 25vh; text-align: center; font-size: 1.2em, margin: auto;">
+        <% flash.each do |k,v| %>
+        <%=tag.div v, class: "alert alert-#{k}", role: 'alert'%>
+        <% end %>
+        </div>
+          <nav class="navigation">
+            <span><%= link_to 'О нас', abouts_path%></span>
+            <span><%= link_to 'Услуги', services_path%></span>
+            <span><%= link_to 'Контакты', contacts_path%></span>
+            <span><%= link_to 'Отзывы',  reviews_path%></span>
+              <% if user_signed_in? %>
+            <span class="dropdown", href="#">
+            <button onclick="myFunction()" class="dropbtn btnLogin-popup btn-lg"><%= current_user.name%></button>
+          <div id="myDropdown" class="dropdown-content">
+            <span class="edit"><%= link_to 'Редактировать', edit_user_path(current_user) %></span>
+            <span class="exit"><%= link_to 'Выйти', session_path, data: {method: :delete} %></span>
+              <% else %>
+            <button onclick="myFunction()" class="dropbtn btnLogin-popup btn-lg">Регистрация</button>
+          <div id="myDropdown" class="dropdown-content">
+            <span span><%= link_to 'Зарегистрироваться', new_user_path%></span>
+            <span><%= link_to 'Войти', new_session_path%></span>
+          </div>
+            <% end %>
+          </nav>
+          </div>
+    </header>
+      <%= yield %>      
   </body>
-
 </html>
+
 

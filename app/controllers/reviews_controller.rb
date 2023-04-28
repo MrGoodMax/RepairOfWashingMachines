@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new review_params
     if @review.save
-      flash[:success] = "Ваш отзыв отправлен!"
+      flash[:warning] = "Ваш отзыв отправлен!"
       redirect_to reviews_path
     else 
       render :new
@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update review_params
-      flash[:success] = "Ваш отзыв обновлен!"
+      flash[:warning] = "Ваш отзыв обновлен!"
       redirect_to reviews_path
     else
       render :edit
@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy 
-    flash[:success] = "Ваш отзыв удален!"
+    flash[:warning] = "Ваш отзыв удален!"
     redirect_to reviews_path
   end
 

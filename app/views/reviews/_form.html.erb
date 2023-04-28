@@ -1,9 +1,9 @@
 <%= render 'shared/errors', object: @review %>
 
 <%= form_with model: @review do |f| %>
+<div class="cont_review">
   <div class="mb-3 row">
     <div class="col-sm-2 col-form-label">
-    <%= f.label :Ваш_отзыв %>
     </div>
     
     <div class="col-sm-10">
@@ -11,5 +11,6 @@
     </div>
   </div>
 
-  <%= f.submit "Отправить", class: "btn btn-primary"%>
+    <%= f.submit "Отправить", class: "btn btn-lg"%>
 <% end %>
+</div>

@@ -1,8 +1,9 @@
 <% provide :clients_title, 'Наши контакты' %>
 
+<container class="container">
 <container class="contacts">
   <header class="front-page-titles">
-      <h1>Контактная информация</h1>
+    <h1>Контактная информация</h1>
   </header>
 
 
@@ -10,60 +11,46 @@
     <div class="brands-in-flex">
       <table class="uss_table_darkgrey" cellspacing="0" cellpadding="13">
         <tbody>
-
-          <tr><td> <ion-icon class="h1" name="location-outline"></ion-icon></td> <td><span>Адрес: г.Саранск,<br>
-                                                                                          ул. Р.Люксембург, д. 9</p></span></td></tr>
-          <tr><td> <ion-icon class="h2" name="call-outline"></ion-icon></td> <td><span><a href="tel:+79274633422"><span style="color: #605f5f;font-weight: 500;font-size: 20px;">+7 (927) <span style="color: #fea700;">463-34-22</span></span></a><br>
-            <a href="tel:+79273231402"><span style="color: #605f5f;font-weight: 500;font-size: 20px;">+7 (927) <span style="color: #fea700;">323-14-02</span></span></a> </span></td></tr>
-
-
-          <tr><td> <ion-icon class="h3" name="mail-outline"></ion-icon></td> <td><span>washingmachinerepair@ya.ru</span></td></tr>
-
-
-          <tr><td> <ion-icon class="h4" name="time-outline"></ion-icon></td> <td><span>Часы работы: с 9:00 до 21:00<br> 
-                  ежедневно (без выходных)</span></td></tr>                  
-
-
+          <tr><td> <ion-icon class="h1" name="location-outline"></ion-icon></td> <td><span>
+            Адрес: г.Саранск,<br>ул. Р.Люксембург, д. 9</p></span></td></tr>
+          <tr><td> <ion-icon class="h2" name="call-outline"></ion-icon></td> <td><span>
+            <a href="tel:+78342343125">+7 (834) <span style="color: #fea700;">234-31-25</span></a><br>
+            <a href="tel:+79513403125">+7 (951) <span style="color: #fea700;">340-31-25</span></a> </span></td></tr>
+          <tr><td> <ion-icon class="h3" name="mail-outline"></ion-icon></td> 
+          <td><span>WASHMACHREPAIR@ya.ru</span></td></tr>
+          <tr><td> <ion-icon class="h4" name="time-outline"></ion-icon></td> 
+          <td><span>Часы работы: с 9:00 до 21:00<br> 
+                    ежедневно (без выходных)</span></td></tr>                  
         </tbody>
-      </table>
-          
+      </table>  
     </div>
   </container>
 
-      
-    
     
   <container class="feedback">
     <div id="questions" class="py-3">
       <h3>У вас есть вопросы? Вы можете задать их здесь</h3>
         <div class="form">
           <%= form_with model: @contact do |f| %>
-    
         <div class="col-sm-10">
           <%= f.text_field :name, placeholder: 'Имя' , class: "form-control" %>
         </div>
-    
-
         <div class="col-sm-2 col-form-label">
         </div>
-
         <div class="col-sm-10 mb-3">
           <%= f.email_field :email, value: params[:email], placeholder: 'E-mail', class: "form-control form-control-lg" %>
         </div>
-    
-
-        <div class="col-sm-10">
+        <div id="area" class="col-sm-10">
           <%= f.text_area :body, class: "form-control", required: true, minlenght: 5 %>
         </div>
         <div id="butt">
-          <%= f.submit 'Отправить', class: 'btn btn-primary btn-lg' %>
+          <%= f.submit 'Отправить', class: 'btn btn-lg' %>
           <% end %>
         </div>
-      
         </div>
     </div>
   </container>
-   
+</container>
 </container>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
