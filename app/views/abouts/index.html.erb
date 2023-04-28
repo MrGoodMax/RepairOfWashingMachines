@@ -1,5 +1,6 @@
 <% provide :clients_title, 'О нас' %>
 
+<container class="container">
 <container class="cont">
 	
 	<div class="entry-content"><h1>О нашем сервисе</h1> 
@@ -22,30 +23,3 @@
 
   </div>
 </container>
-
-
-
-<div class="container">
-  <main>
-    <div class="py-3">
-      <h2>Ремонт стиральных машин на дому</h2>
-      <p class="lead">Узнайте возможную причину неисправности и<br> 
-                      стоимость ремонта по телефону <strong>+7 (927) 463-34-22</strong><br>
-                      или оставьте свой номер и мастер Вам перезвонит</p>
-
-<%= form_with model: @client do |f| %>
-  <div>
-  <div class="col-sm-3">
-      <%= f.text_field :phone, required: true, minlength: 11, placeholder: 'Ваш телефон', class: 'form-control' %>
-  </div>
-</div>
-
-  <div class="col-sm-3"><br>
-      <%= f.text_field :name, required: true, minlength: 2, placeholder: 'Ваше имя', class: 'form-control' %>
-  </div>
-</div>
-
-      <%= f.submit 'Заказать бесплатную консультацию', class: 'btn btn-primary btn-lg' %>
-</div>
-</div>
-<% end %>

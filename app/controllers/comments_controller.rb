@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @review.comments.build comment_params
     if @comment.save
-      flash[:success] = "Комментарий создан"
+      flash[:warning] = "Комментарий создан"
       redirect_to review_path(@review)
     else
       @comments = @review.comments.order created_at: :desc 
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update comment_params
-      flash[:success] = "Ваш комментарий обновлен!"
+      flash[:warning] = "Ваш комментарий обновлен!"
       redirect_to review_path(@review)
     else
       render :edit
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy 
-    flash[:success] = "Ваш комментарий удален!"
+    flash[:warning] = "Ваш комментарий удален!"
     redirect_to review_path(@review)
   end
 

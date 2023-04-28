@@ -1,33 +1,41 @@
 <% provide :clients_title, 'Отзыв' %>
 
-<h1 class="mb-2"><%= @review.body %> </h1>
+<container class="show">
+  <div class="show_review">
+    <article class="card mt-3">
+      <div class="card-body">
+          <h1 class="mb-1"><i><%= @review.body %></i> </h1>
+          <time datetime="<%= @review.formatted_created_at %>">
+          <%= @review.formatted_created_at %></time>
+        <div class="coll_btn">
+        <%= link_to 'Показать полностью', review_path(@review), class: 'btn btn mt-2 mb-1'%>
+          <%= link_to 'Редактировать', edit_review_path(@review), class: 'btn btn mt-2 mb-2' %>
+        <%= link_to 'Удалить', review_path(@review), class: 'btn btn mt-2 mb-0', data: {method: :delete, confirm: 'Вы точно уверены?'} %>
+        </div>
+      </div>
+    
+    
+      <%= render 'comments/form' %>
+    
+        <h2 class="mb-1">Комментарии</h2>
+          <% @comments.each do |comment|%>
+          <hr class="my-3">
+        <i class="comment"><%= comment.body %></i>
+      <div class="comment_time">
+          <time datetime="<%= comment.formatted_created_at %>">
+        <%= comment.formatted_created_at %></time></div>
+      <div class="comment_btn">
+        <%= link_to 'Редактировать', edit_review_comment_path(@review, comment), class: 'btn btn-long' %>
+        <%= link_to 'Удалить', review_comment_path(@review, comment), class: 'btn btn-sm',
+                                data: {method: :delete, confirm: "Вы уверены?"} %>
+      </div>
+          <hr class="my-3">
+      </div>
+          <% end %>
+    </article>
+  </div>
+</container>
 
-<time datetime="<%= @review.formatted_created_at %>">
-  <%= @review.formatted_created_at %></time>
-
-  <div class="mb-4">
-  <%= link_to 'Показать полностью', review_path(@review), class: 'btn btn-primary mt-2'%>
-  <%= link_to 'Редактировать', edit_review_path(@review), class: 'btn btn-secondary mt-2' %>
-  <%= link_to 'Удалить', review_path(@review), class: 'btn btn-danger mt-2', data: {method: :delete, confirm: 'Вы точно уверены?'} %>
- </div>
-<hr class="my-3">
-
-<%= render 'comments/form' %>
 
 
-<h2><hr class="my-3">Комментарии</h2>
 
-<% @comments.each do |comment|%>
-  <article class="mb-3">
-    <time datetime="<%= comment.formatted_created_at %>">
-    <%= comment.formatted_created_at %></time>
-
-    <p>
-      <%= comment.body %>
-    </p>
-
-    <%= link_to 'Редактировать', edit_review_comment_path(@review, comment), class: 'btn btn-secondary btn-sm' %>
-    <%= link_to 'Удалить', review_comment_path(@review, comment), class: 'btn btn-danger btn-sm',
-    data: {method: :delete, confirm: "Вы уверены?"} %>
-  </article>
-<% end %>
