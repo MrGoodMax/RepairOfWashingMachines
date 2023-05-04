@@ -105,8 +105,6 @@
 
   
 
-
-
   <div id="main">
     <div class="intro">
         <img src="https://sun9-44.userapi.com/impg/ZTErCbCAA2ouNGN5cd1G4sBOlToXboZvYMUa6g/OF0dLl_GZNE.jpg?size=315x316&quality=95&sign=5bfe1033c55f0a84866a5d10db1304aa&type=album" 
@@ -374,19 +372,31 @@
   </div>
 
 
-
-  <div id="contacts">
-    <center><h5>У вас есть вопросы?<br>Вы можете задать их здесь.</h5></center>
-      <form id="form_input">
-        <label for="name">Имя <span>*</span></label><br>
-          <input type="text" placeholder="Введите имя" name="name" id="name"><br>
-        <label for="email">Ваша почта <span>*</span></label><br>
-          <input type="email" placeholder="Введите email" name="email" id="email"><br>
-        <label for="message">Сообщение <span>*</span></label><br>
-          <textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
-        <div id="mess_send" class="btn">Отправить</div>
-      </form>
-
+ <div id="contacts">
+    <div id="questions" class="py-3">
+      <center><h5>У вас есть вопросы?<br>Вы можете задать их здесь.</h5></center>
+        <form id="form_input">
+       
+          <%= form_with model: @contact do |f| %>
+        <div class="col-sm-100">
+         <label for="name">Имя <span>*</span></label><br>
+          <%= f.text_field :name, placeholder: "Введите имя" , class: "form-control-lg", required: true, minlenght: 2 %>
+        </div>
+        <div class="col-sm-100">
+           <label for="email">Ваша почта <span>*</span></label><br>
+          <%= f.email_field :email, value: params[:email], placeholder: 'E-mail', class: "form-control-lg" %>
+        </div>
+        <div id="area" class="col-sm-100">
+          <label for="message">Сообщение <span>*</span></label><br>
+          <%= f.text_area :body, placeholder: "Введите ваше сообщение", class: "form-contro-lg", required: true, minlenght: 5 %>
+        </div>
+        <div id="mess_send">
+          <%= f.submit 'Отправить', class: 'btn btn-lg' %>
+          <% end %>
+        </div>
+        
+    
+    
       <%# bogo-cat %>
     <svg id="bongo-cat" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 787.3 433.8">
     <defs>
@@ -515,23 +525,23 @@
 
   <div id="faq">
     <div class="row contacts-rm">
-        <div class="col-md-3 col-3 py-3 py-4">
+        <div class="col-3 py-3">
             <img class="steps-icon"> <%= image_tag("1.png") %></img>
             <p><i> Адрес: г.Саранск,<br>
                 ул. Республиканская, д. 104</p></i>
         </div>
-        <div class="col-md-3 col-3 py-3 py-4">
+        <div class="col-md-3 col-3 py-3">
             <img class="steps-icon"> <%= image_tag("2.png") %></img>
             <p><i>
             <a href="tel:+78342343125">+7 (834) <span style="color: #fea700;">234-31-25</span></a><br>
             <a href="tel:+79513403125">+7 (951) <span style="color: #fea700;">340-31-25</span></a></p>
             </i>
         </div>
-        <div class="col-md-3 col-3 py-3 py-4">
+        <div class="col-md-3 col-3 py-3">
             <img id="email" class="steps-icon"> <%= image_tag("3.png") %></img>
             <i class="email">WASHMACHREPAIR@YA.RU</i>
         </div>
-        <div class="col-md-3 col-3 py-3 py-4">
+        <div class="col-md-3 col-3 py-3">
             <img class="steps-icon"> <%= image_tag("4.png") %></img>
             <p><i>Часы работы: с 9:00 до 21:0<br>
                   ежедневно (без выходных)</p></i>

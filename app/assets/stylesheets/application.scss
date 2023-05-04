@@ -202,7 +202,6 @@ body {
   background-attachment: fixed;
 }
 
-
 .logo img {
   width: 90px;
   filter: drop-shadow(2px 4px 6px black);
@@ -212,7 +211,6 @@ body {
 .logo img:hover {
   transform: scale(1.1);
 } 
-
 
 .navigation a {
   position: relative;
@@ -245,7 +243,7 @@ body {
 
 .navigation a:hover {
   color: #bfbfbf;
-  transform: scale(1.1);
+  transform: scale(1.1)
 }
 
 .navigation span.edit a:hover {
@@ -255,7 +253,6 @@ body {
 .navigation span.exit a:hover {
   color: #ffffff;
 }
-
 
 .navigation .btnLogin-popup {
   width: 130px;
@@ -308,7 +305,7 @@ container.edit label {
 
 
 
-// about section
+// about page
 
 .cont {
   background: transparent;
@@ -359,7 +356,7 @@ container.edit label {
 
 
 
-// Services section
+// Services page
 
 .serv {
   background: transparent;
@@ -419,7 +416,7 @@ container.edit label {
 
 
 
-// contacts section
+// contacts page
 
 .contacts {
   background: transparent;
@@ -507,7 +504,7 @@ textarea.form-control {
 
 
 
-// clients section
+// clients page
 
 // header #logo {
 //   color: #fff;
@@ -1055,8 +1052,8 @@ textarea.form-control {
 #contacts {
   width: 100%;
   float: left;
-  padding-bottom: 40px;
-  padding-top: 70px;
+  padding-bottom: 20px;
+  padding-top: 20px;
   background: #f4f4f4;
 }
 
@@ -1108,7 +1105,6 @@ h1, h2, h3, h4, h5 {
   border-radius: 7px;
   border: 2px solid silver;
   font-size: 0.9em;
-  color: #4a4a4a;
 }
 
 #form_input input:focus, #form_input textarea:focus {
@@ -1132,6 +1128,28 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn:hover {
+  background-color: #db8f01;
+  border: 1px solid #8d8b8b;
+  color: white;
+}
+
+#mess_send input.btn.btn-lg {
+  float: left;
+    border-radius: 10px;
+    padding: 5px 9px;
+    font-size: 1.2em;
+    background-color: #fea700;
+    text-shadow: #454545 0 0 3px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    position: relative;
+    /* left: 130px; */
+    width: 185px;
+    border: 1px solid #8d8b8b;
+}
+
+#mess_send input.btn.btn-lg:hover {
   background-color: #db8f01;
   border: 1px solid #8d8b8b;
   color: white;
@@ -1361,7 +1379,7 @@ path#f3-l9 {
 #faq {
   width: 100%;
   float: left;
-  padding: 40px;
+  padding: 10px 40px;
   background: rgba(0, 0, 0, 0.9);
 }
 
@@ -1412,7 +1430,7 @@ path#f3-l9 {
   left: 20px;
   line-height: 21px;
   color: #ffffff;
-  top: 25px;
+  top: 10px;
 }
 
 
@@ -1641,7 +1659,7 @@ container article.mt-3 {
   position: relative;
   top: 14px;
   width: 100%;
-  padding: 16px;
+  padding: 5px;
 }
 
 container h1.mb-1 {
@@ -1693,11 +1711,17 @@ border: 1px solid #8d8b8b;
 color: white;
 }
 
-hr {
+hr.my-3 {
   color: #fff;
   position: relative;
-  left: 23px;
-  width: 67vh;
+  margin: 20px;
+  width: 171vh;
+}
+
+@media (max-width: 1596px) {
+  hr.my-3  {
+    width: auto;
+  }
 }
  
 
@@ -1721,7 +1745,10 @@ container i.comment {
   color: #fff;
   text-align: justify;
   text-indent: 40px;
+  display: flex;
+  width: auto;
 }
+
 
 container.show_review {
   position: relative;

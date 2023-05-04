@@ -3,6 +3,7 @@
 module ErrorHandling
   extend ActiveSupport::Concern
 
+  # Обработка ошибок
   included do
     rescue_from ActiveRecord::RecordNotFound, with: :notfound
 

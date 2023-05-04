@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  # избегаем дублирования кода с помощью before_action и находим review и comment по id до запуска контроллера. 
+  # Важен порядок Экшенов! Снаяала ответ, а потом привязанный к нему комментарий!
   before_action :set_review!
   before_action :set_comment!, except: :create
 
@@ -10,6 +12,8 @@ class CommentsController < ApplicationController
       flash[:warning] = "Комментарий создан"
       redirect_to review_path(@review)
     else
+      # Определяем переменную для того чтобы можно было отрендерить Show, так как Show в отличии 
+      # от redirect_to не предоставляет никакого маршрута, а просто выводит на экран инфу
       @comments = @review.comments.order created_at: :desc 
       render 'reviews/show'
     end
