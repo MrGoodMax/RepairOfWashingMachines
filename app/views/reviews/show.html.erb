@@ -8,30 +8,36 @@
           <time datetime="<%= @review.formatted_created_at %>">
           <%= @review.formatted_created_at %></time>
         <div class="coll_btn">
-        <%= link_to 'Показать полностью', review_path(@review), class: 'btn btn mt-2 mb-1'%>
+        <%# Передаем объект(review) для того чтобы подставить конкретный id в url. Метод .id вызывается автоматически.%>
+        <%# <%= link_to 'Показать полностью', review_path(@review), class: 'btn btn mt-2 mb-1'%> 
           <%= link_to 'Редактировать', edit_review_path(@review), class: 'btn btn mt-2 mb-2' %>
         <%= link_to 'Удалить', review_path(@review), class: 'btn btn mt-2 mb-0', data: {method: :delete, confirm: 'Вы точно уверены?'} %>
         </div>
       </div>
     
-    
       <%= render 'comments/form' %>
-    
         <h2 class="mb-1">Комментарии</h2>
+        <%# Перебираем все комментарии %>
           <% @comments.each do |comment|%>
+          <div>
+          <div class="cherta">
           <hr class="my-3">
+          </div>
         <i class="comment"><%= comment.body %></i>
       <div class="comment_time">
           <time datetime="<%= comment.formatted_created_at %>">
-        <%= comment.formatted_created_at %></time></div>
+        <%= comment.formatted_created_at %></time>
+      </div>
       <div class="comment_btn">
+      <%# Передаем массив содержащий в себе объект(@review и comment) для того чтобы подставить конкретный id в url. Метод .id вызывается автоматически.%>
         <%= link_to 'Редактировать', edit_review_comment_path(@review, comment), class: 'btn btn-long' %>
         <%= link_to 'Удалить', review_comment_path(@review, comment), class: 'btn btn-sm',
-                                data: {method: :delete, confirm: "Вы уверены?"} %>
+                               data: {method: :delete, confirm: "Вы уверены?"} %>
       </div>
-          <hr class="my-3">
+        
       </div>
-          <% end %>
+      
+        <% end %>
     </article>
   </div>
 </container>

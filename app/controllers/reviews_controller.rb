@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  # избегаем дублирования кода с помощью before_action и находим review и comment по id до запуска контроллера. Важен порядок Экшенов!
   before_action :find_review, only: %i[edit show update destroy]
   
   def index
@@ -24,7 +25,10 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    # Создаем в памяти новый образец класса comment и сразу же привязываем его к конкретному отзыву(@review). 
+    # Делается это все для того, чтобы не создавать отдельную форму для комментариев, а сразу отображать их в show вместе с отзывами.
     @comment = @review.comments.build
+    # Находим все комментарии в БД и сортируем их по убыванию(самый свежий ответ будет самым первым)
     @comments = @review.comments.order created_at: :desc 
   end
 
@@ -38,9 +42,13 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review.destroy 
-    flash[:warning] = "Ваш отзыв удален!"
-    redirect_to reviews_path
+    if @review.destroy 
+      flash[:warning] = "Ваш отзыв удален!"
+      redirect_to reviews_path
+    else 
+      flash[:warning] = "Произошла ошибка!"
+      redirect_to reviews_path
+    end
   end
 
   private 

@@ -1,16 +1,20 @@
-<container class="review">
+
   <% provide :clients_title, 'Все отзывы' %>
+  <container class="review">
     <h1 class="mb-4"> Ваши отзывы </h1>
     <div class="review_btn">
   <%= link_to 'Оставить отзыв', new_review_path, class: 'btn btn-lg' %></div>
-    <%= @reviews.each do |review| %>
+  <%# Перебираем все ответы %>
+    <% @reviews.each do |review| %>
       <article class="card mt-3">
         <div class="card-body">
-          <h4 class="text"><i><%= review.body %></i></h4>
+          <h4 class="text"><i><%= truncate review.body, length: 270, omission:'...' %></i></h4>
           <section class="card-text">
           <time datetime="<%= review.formatted_created_at %>">
           <small><%= review.formatted_created_at %></small></time><br>
           <div class="col_btn">
+
+            <%# Передаем объект(review) для того чтобы подставить конкретный id в url. Метод .id вызывается автоматически.%>
             <a><%= link_to 'Показать полностью', review_path(review), class: 'btn mt-2 mb-1'%></a>
             <a> <%= link_to 'Редактировать', edit_review_path(review), class: 'btn mt-2 mb-2' %></a>
             <a><%= link_to 'Удалить', review_path(review), class: 'btn mt-2 mb-0', data: {method: :delete, confirm: 'Вы точно уверены?'} %></a></div>

@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  # избегаем дублирования кода с помощью before_action и находим review и comment по id до запуска контроллера. Важен порядок Экшенов!
   before_action :require_no_authentication, only: %i[new create]
   before_action :require_authentication, only: %i[edit update]
   before_action :set_user!, only: %i[edit update]
 
-  def edit; end
+  def edit 
+  end
 
   def update
     if @user.update user_params
@@ -41,3 +43,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :name, :password, :password_confirmation, :old_password)
   end
 end
+
